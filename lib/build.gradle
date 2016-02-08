@@ -1,0 +1,27 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+
+android {
+	compileSdkVersion 23 
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        minSdkVersion 14        
+        targetSdkVersion 22
+    }
+}
+
+publish {
+    groupId = 'ru.korniltsev.google-play-services-hacks'
+    artifactId = 'advertising-id-client'
+    publishVersion = '0.0.3'
+    desc = '''
+Very small replacement to com.google.android.gms:play-services-analytics
+You can use this library to decrease method count(saves 6200 methods) and if you don't need
+the whole analytics package (i.e. all you need is advertising id for ad networks)
+To use it - delete all dependencies to google play services and add this lib (It won't work
+together with google play services).
+'''
+    repository = 'https://github.com/kurganec/advertising_id_client'
+}
+
